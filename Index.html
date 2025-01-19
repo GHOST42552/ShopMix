@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="loja, loja onlinha-horizontal, compras, entrega rápida, confiável">
+        <meta name="description" content="Um site de compras e vendas">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ShopMix</title>
+        <link rel="stylesheet" href="Css/Style.css">
+        <link rel="stylesheet" href="Css/Responsive.css">
+        <link rel="icon" href="Assets/Icons/ShopMix.png" type="">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <script src="Js/Utilitários/Menu-principal.js" defer></script>
+        <script src="Js/Utilitários/Carrosel-imagens.js" defer></script>
+        <script src="Js/Componentes/Formatação-data.js" defer></script>
+        <script src="Js/Componentes/Validação-emails.js" defer></script>
+        <script src="Js/Scripts.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <section class="all-menu">
+            <div class="ShopMix-nav-logo-container">
+                <a href="http://127.0.0.1:5500" class="ShopMix-nav-logo" data-i18n="shopMixName">Shop Mix: loja que vende de tudo</a>
+            </div>
+            <input type="text" placeholder="Procurar por.." class="Barra-de-pesquisa" name="pesquisar" autocomplete="off" value="" data-i18n="barraPesquisaPlaceholder">
+            <div class="Right-part-menu">
+            <div class="notificacao-container">
+                <i id="notificacao-icon-id" class="fa-solid fa-bell fa-xl" style="color: white;"></i>
+                <div class="notification-container-quantity">
+                    <span class="notification-quantity" style="user-select: none;">0</span>
+                </div>
+            </div>
+            <div class="CEP-container">
+                <i id="CEP-icon-id" class="fa-solid fa-location-dot fa-xl"></i>
+            </div>
+            <div class="Shopping-cart-container">
+                <a class="Shopping-cart-icon" href=""><i id="shopping-cart-icon-id" class="fa-solid fa-cart-shopping fa-xl"></i></a>
+                <div class="Shopping-cart-quantity-container">
+                    <span class="Shopping-cart-quantity" style="user-select: none;">0</span>
+                </div>
+            </div>
+            <div class="all-container-menu-user">
+            <div class="Login-container">
+                <button id="button-user-icon" style="border: none; background-color: #ffde59;"><i id="login-user-icon-id" class="fa-solid fa-circle-user fa-2xl"></i></button>
+            </div>
+            <div id="dropdown-menu-all-id" class="dropdown-menu-all">
+                <h3 style="color: #ccc; font-family: sans-serif; margin-top: 10px;" data-i18n="configuracoes">Configurações:</h3>
+                <ul class="dropdown-menu-ul">
+                    <li data-i18n="loginRegistre">Login/Registre-se</li>
+                    <li data-i18n="perfil">Perfil</li>
+                    <li data-i18n="notificacoes">Notificações</li>
+                    <li data-i18n="idiomaRegiao">Idioma e Região</li>
+                    <li data-i18n="acessibilidade">Acessibilidade</li>
+                    <li data-i18n="seguranca">Segurança</li>
+                    <li data-i18n="avancado">Avançado</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        </section>
+        <div class="all-container-category">
+            <div class="all-container-all-category">
+                <div class="all-category-chevron-all-container">
+                    <div style="user-select: none;" data-i18n="todasCategorias">
+                    <strong>Todas as categorias</strong>
+                </div>
+                <div class="Chevron-container-all-category">
+                    <a class="dropdown-all-category" type="button" onclick="mudariconechevronallcategory()"><i id="Chevron-icon-all-category" class="fa-solid fa-chevron-down"></i></a>
+                </div>
+            </div>
+            <div id="dropdown-all-category-content-id" class="dropdow-all-category-content">
+                <a href="#"><li data-i18n="eletrodomesticos">Eletrodomésticos</li></a>
+                <a href="#"><li data-i18n="moda">Moda</li></a>
+                <a href="#"><li data-i18n="casaMoveis">Casa e Móveis</li></a>
+                <a href="#"><li data-i18n="veiculos">Veículos</li></a>
+                <a href="#"><li data-i18n="cupons">Cupons</li></a>
+                <a href="#"><li data-i18n="ferramentas">Ferramentas</li></a>
+                <a href="#"><li data-i18n="celulares">Celulares</li></a>
+                <a href="#"><li data-i18n="construcao">Construção</li></a>
+            </div>
+        </div>
+            <nav class="all-category-center-container">
+            <li class="Oferta-container-category">
+            <button type="button" class="nav-button">
+            <i id="all-category-center-ofertas-icone-id" class="fa-solid fa-solid fa-magnifying-glass-dollar fa-xl" style="color: lightsalmon;"></i>
+            <div class="all-category-text-ofertas" data-i18n="ofertas">
+                <strong>Ofertas</strong>
+            </div>
+            </button>
+            </li>
+            <li class="Moda-container-category">
+            <button type="button" class="nav-button">
+            <i id="all-category-center-moda-icone-id" class="fa-solid fa-shirt fa-xl" style="color: lightsalmon;"></i>
+            <div  class="all-category-text-moda" data-i18n="moda">
+                <strong>Moda</strong>
+            </div>
+            </button>
+            </li>
+            <li class="Tecnologia-container-category">
+            <button type="button" class="nav-button">
+            <i id="all-category-center-tecnologia-icone-id" class="fa-solid fa-microchip fa-xl" style="color: lightsalmon;"></i>
+            <div  class="all-category-text-eletronicos" data-i18n="tecnologia">
+                <strong>Tecnologia</strong>
+            </div>
+            </button>
+            </li>
+            <li class="Moveis-container-category">
+            <button type="button" class="nav-button">
+            <i id="all-category-center-moveis-icone-id" class="fa-solid fa-couch fa-xl" style="color: lightsalmon;"></i>
+            <div  class="all-category-text-mobilias" data-i18n="moveis">
+                <strong>Móveis</strong>
+            </div>
+            </button>
+            </li>
+            <li class="Veiculos-container-category">
+                <button type="button" class="nav-button">
+            <i id="all-category-center-veiculos-icone-id" class="fa-solid fa-car fa-xl" style="color: lightsalmon;"></i>
+            <div  class="all-category-text-automoveis" data-i18n="veiculos">
+                <strong>Veículos</strong>
+            </div>
+            </button>
+            </li>
+            </nav>
+    </div>
+    </header>
+    <div style="display: none;" class="carousel">
+        <div class="slider">
+            <div class="slick-item"><img style="height: 200px;" src="Assets/Carousel/images.jpg">
+            </div>
+            <div class="slick-item"><img style="height: 200px;" src="Assets/Carousel/WhatsApp-Image-2018-09-16-at-5.07.21-PM.jpeg">
+            </div>            
+            <div class="slick-item"><video style="height: 200px;" src="Assets/Carousel/Download.mp4" controls></video>
+            </div>
+        </div>
+    </div>
+    <section class="oferta-container-all" data-i18n="ofertas">
+        <h1>Ofertas</h1>
+    </section>
+    <section class="moda-container-all" data-i18n="moda">
+        <h1>Moda</h1>
+    </section>
+    <section class="tecnologia-container-all" data-i18n="tecnologia">
+        <h1>Tecnologia</h1>
+    </section>
+    <section class="moveis-container-all" data-i18n="moveis">
+        <h1>Móveis</h1>
+    </section>
+    <section class="veiculos-container-all" data-i18n="veiculos">
+        <h1>Veículos</h1>
+    </section>
+    <div class="configuracoes">
+        <div class="configuracoes-xmark-container">
+            <h3 style="text-align: left; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  padding-left: 100px;" data-i18n="configuracoes">Configurações</h3>
+            <button><i class="fa-solid fa-xmark fa-xl"></i></button>
+        </div>
+        <div style="display: flex;">
+        <div class="all-container-line-abas">
+          <div class="linha-vertical" style="margin-left: 100px;"></div>
+          <div class="abas">
+          <button class="aba-botao ativo" data-aba="geral" data-i18n="perfil">Perfil</button>
+          <button class="aba-botao" data-aba="notificacoes" data-i18n="notificacoes">Notificações</button>
+          <button class="aba-botao" data-aba="idioma" data-i18n="idiomaRegiao">Idioma e Região</button>
+          <button class="aba-botao" data-aba="privacidade" data-i18n="privacidade">Privacidade</button>
+          <button class="aba-botao" data-aba="acessibilidade" data-i18n="acessibilidade">Acessibilidade</button>
+          <button class="aba-botao" data-aba="seguranca" data-i18n="seguranca">Segurança</button>
+          <button class="aba-botao" data-aba="avancado" data-i18n="avancado">Avançado</button>
+          </div>
+        </div>
+        <div class="conteudo-abas">
+            <div class="conteudo ativo" id="geral">Perfil</div>
+            <div class="conteudo" id="notificacoes">Conteúdo de Notificações</div>
+            <div class="conteudo" id="idioma">
+                <div class="all-container-location-region">
+                <div>
+                <h2>Idioma</h2>
+                <select id="select-idioma" style="margin: 10px 0 0 30px; width: 200px;">
+                    <option value="pt-BR">Português (Brasil)</option>
+                    <option value="en-US">English (United States)</option>
+                </select>
+                </div>
+                <div class="linha-horizontal"></div>
+                <div>
+                <h2>Região</h2>
+                    <div class="location-region-content">
+                    <div class="pais-cep-container">
+                    <div>
+                    <label for="pais" class="text-container-localizacao" style="user-select: none;">País:</label>
+                    <div style="padding-right: 40px;">
+                    <select class="select-pais-option" style="margin: 10px 0 10px 0;" id="pais" name="pais">
+                        <option value="br" selected>Brasil</option>
+                    </select>
+                    </div>
+                    </div>
+                    <div>
+                    <label for="CEP" class="text-container-localizacao" style="user-select: none; padding-right: 5px;">CEP:</label>
+                       <div class="input-cep-error-message-container">
+                        <input type="text" id="CEP" name="CEP" maxlength="9" style="width: 100px; margin: 10px 0 10px 0; padding-left: 50px;" placeholder="00000-000" ... data-alerta-exibido="false" oninput="formatarCEP(this)" onblur="buscarCEP(this)">
+                        <div id="cep-error" class="error-message" data-i18n="cep.invalido!">Cep Inválido!</div>
+                        <div id="cep-invalido-error" class="error-message" style="margin-right: 10px;" data-i18n="cep.invalido.digite.8.digitos">CEP inválido. Digite 8 dígitos.</div>
+                        <div id="cep-nao-encontrado-error" class="error-message" data-i18n="cep.nao.encontrado">CEP não encontrado.</div>
+                        <div id="cep-erro-requisicao" class="error-message" data-i18n="erro.consultar.cep">Erro ao consultar o CEP.</div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="estado-cidade-container">
+                    <label for="estado" class="text-container-localizacao" id="label-estado" style="user-select: none; pointer-events: none;">Estado:</label>
+                        <input class="estado-input-text" type="text" style="margin: 10px 0 10px 0; padding-left: 5px; width: 25px; pointer-events: none;" id="estado" name="estado" value="">
+                    <label for="cidade" class="text-container-localizacao" style="user-select: none; pointer-events: none;">Cidade:</label>
+                        <input class="cidade-input-text" type="text" style="width: 100px; margin: 10px 10px 10px 0; padding-left: 5px;" id="cidade" name="cidade">
+                    </div>
+                    <div>
+                    <label for="logradouro" class="text-container-localizacao" style="user-select: none;">Logradouro:</label>
+                        <input type="text" style="width: 100px; margin: 10px 0 10px 0; padding-left: 5px;" id="logradouro" name="logradouro">
+                    </div>
+                    <div>
+                    <label for="bairro" class="text-container-localizacao" style="user-select: none;">Bairro:</label>
+                        <input type="text" style="width: 100px; margin: 10px 0 10px 0; padding-left: 5px;" id="bairro" name="bairro">
+                    </div>
+                    <div>
+                    <label for="Numero da casa" class="text-container-localizacao" style="user-select: none;">Número da casa:</label>
+                        <input type="text" style="width: 100px; margin: 10px 0 10px 0; padding-left: 5px;" id="numero da casa" name="numero da casa" maxlength="5">
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            <div class="conteudo" id="privacidade">Conteúdo de Privacidade</div>
+            <div class="conteudo" id="acessibilidade">Conteúdo de Acessibilidade</div>
+            <div class="conteudo" id="seguranca">Conteúdo de Segurança</div>
+            <div class="conteudo" id="avancado">Conteúdo Avançado</div>
+        </div>
+      </div>
+    </div>
+    <footer>
+    </footer>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    </body>
+</html>
