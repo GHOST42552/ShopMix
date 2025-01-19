@@ -1,0 +1,588 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+body::before {
+    display: var(--before-display, none);
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    display: var(--before-display, none);
+}
+
+p {
+    font-size: 12px;
+    text-align: justify;
+    color: #000;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.all-menu {
+    background-color: #ffde59;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    width: auto;
+    height: 70px;
+}
+
+.ShopMix-nav-logo {
+    background-image: url(../Assets/Icons/ShopMix-Logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    width: 300px;
+    height: 70px;
+    text-indent: -999px;
+    margin-left: 100px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.Img-logo-menu {
+    padding-left: 50px;
+}
+
+.Barra-de-pesquisa {
+    height: 40px;
+    width: 400px;
+    font-size: 14px;
+    padding-left: 10px;
+    background-color: white;
+    margin: 15px auto 0 20px;
+    border-radius: 20px;
+    border: none;
+}
+
+.Right-part-menu {
+    display: flex;
+    margin-right: 10px;
+}
+
+.notificacao-container {
+    position: relative;
+    padding: 26px 0 0 10px;
+}
+
+#notificacao-icon-id {
+    padding-right: 40px;
+}
+
+.notification-container-quantity {
+    position: relative;
+}
+
+.notification-quantity {
+    position: relative;
+    position: absolute;
+    top: -2.5em;
+    left: 1em;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2em 0.4em;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.CEP-container {
+    padding: 13px 20px;
+}
+
+#CEP-icon-id {
+    padding: 20px 12px;
+    color: white;
+}
+
+.Shopping-cart-container {
+    position: relative;
+    padding: 26px 40px 0 10px;
+}
+
+#shopping-cart-icon-id {
+    color: white;
+}
+
+#shopping-cart-icon-id:hover {
+    color: black;
+}
+
+.Shopping-cart-quantity {
+    position: absolute;
+    top: 1.3em;
+    right: 3em;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2em 0.4em;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.Login-container {
+    padding: 13px 40px 0 0;
+}
+
+#login-user-icon-id {
+    padding: 20px 0 20px 0;
+    font-size: 35px;
+    color: white;
+}
+
+#login-user-icon-id:hover {
+    color: black;
+}
+
+.dropdown-menu-all {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    background-color: #000;
+    width: 150px;
+    margin-left: -65px;
+    font-size: 13px;
+    z-index: 1000;
+}
+
+.dropdown-menu-ul {
+    list-style: none;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #1e1e1e #1e1e1e;
+    margin: 10px;
+}
+
+.dropdown-menu-ul li {
+    padding: 5px;
+    color: gray;
+}
+
+.overlay {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login-container {
+    position: relative;
+    width: 300px;
+    transform: translate(0, 50%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    z-index: 1001;
+}
+
+.linha-horizontal-login {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 10px 10px 10px;
+}
+
+.Text-login-menu {
+    font-size: 13px;
+}
+
+.form-group {
+    display: block;
+}
+
+.configuracoes {
+    width: 100%;
+    height: 100%;
+    margin-top: 4px;
+    box-shadow: 0 0 5px 2px;
+    background-color: #fdf1abf6;
+    z-index: 1000;
+}
+
+.configuracoes-xmark-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: orange;
+    box-shadow: 10px 1px 10px orange;
+}
+
+.configuracoes-xmark-container h3 {
+    text-align: center;
+    margin-top: 0;
+    padding: 10px;
+    color: white;
+}
+
+.configuracoes-xmark-container i {
+    color: orange
+}
+
+.configuracoes-xmark-container button {
+    margin: 10px 10px 20px;
+}
+
+.all-container-line-abas {
+    display: flex;
+    background-color: #fac878;
+}
+
+.abas {
+    display: flex;
+    flex-direction: column;
+    border: none; 
+    overflow-y: scroll;
+    scrollbar-color: orange black;
+    width: 300px;
+    max-height: 500px;
+}
+
+.abas button {
+    padding: 20px;
+    background-color: #fac878;
+    box-shadow: 0 0 1px orange;
+    border: none;
+    text-align: left;
+    color: black;
+    font-size: 16px;
+}
+
+.abas button:hover {
+    background-color: rgb(244, 224, 136);
+}
+
+.aba-botao.ativo {
+    background-color: rgb(254, 173, 22);
+}
+
+.conteudo-abas {
+    color: #777;
+    justify-content: end;
+    overflow-y: scroll;
+}
+
+.conteudo {
+    display: none;
+    margin: 50px;
+}
+
+.conteudo.ativo {
+    display: block;
+}
+
+.all-container-location-region {
+    display: flex;
+}
+
+.location-region-content {
+    font-size: 14px;
+}
+
+.linha-horizontal {
+    border: 1px solid black;
+    width: 100%;
+    margin: 0 40px 0 40px;
+}
+
+.linha-vertical {
+    border: 1px solid black;
+    height: 100%;
+}
+
+.show-flex {
+    display: flex;
+}
+
+.input-cep-error-message-container {
+    display: block;
+}
+
+.error-message {
+    position: relative;
+    display: none;
+    font-size: 12px;
+    color: red;
+    margin: -10px 5px;
+}
+
+.pais-cep-container {
+    display: flex;
+}
+
+.estado-cidade-container {
+    display: block;
+}
+
+.select-pais-option {
+    background-color: #eee;
+    color: #777;
+    border-color: #ccc;
+    cursor: default;
+    pointer-events: none;
+    width: 150px;
+}
+
+.estado-input-text {
+    background-color: #eee;
+    color: #777;
+    border-color: #ccc;
+    cursor: default;
+    pointer-events: none;
+}
+
+.cidade-input-text {
+    background-color: #eee;
+    color: #777;
+    border-color: #ccc;
+    cursor: default;
+    pointer-events: none;
+}
+
+.text-container-localizacao {
+    padding: 10px 0px 10px 10px;
+}
+
+.all-container-category {
+    display: flex;
+    padding: auto;
+}
+
+.all-container-all-category {
+    display: flex;
+    background-color: orange;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+    height: auto;
+    margin: 0 100px 0 100px;
+    border-radius: 0px;
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+.Chevron-container-all-category {
+    padding: 2px 0 0 10px;
+}
+
+.all-container-all-category {
+    position: relative;
+}
+
+.all-category-chevron-all-container {
+    display: flex;
+}
+
+.dropdown-all-category {
+    background-color: none;
+    color: black;
+}
+
+.dropdow-all-category-content {
+    display: none;
+    position: absolute;
+    background-color: #fdf1abf6;
+    list-style: none;
+    top: 0;
+    margin-top: 40px;
+    min-width: 200px;
+    font-size: 14px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.dropdow-all-category-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+.show {
+    display: block;
+  }
+
+.all-category-center-container {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-size: 16px;
+}
+
+.all-category-text-ofertas {
+    padding-top: 10%;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#all-category-center-ofertas-icone-id {
+    padding-top: 0.95em;
+    padding-left: 10px;
+}
+
+.Moda-container-category {
+    display: flex;
+    padding-left: 10%;
+}
+
+.all-category-text-moda {
+    padding-left: 10px;
+    padding-top: 10%;
+    font-size: 16px;
+}
+
+#all-category-center-moda-icone-id {
+    padding-left: 10px;
+    padding-top: 17%;
+}
+
+.Tecnologia-container-category {
+    display: flex;
+    padding-left: 10%;
+}
+
+.all-category-text-eletronicos {
+    padding-top: 9%;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#all-category-center-tecnologia-icone-id {
+    padding-top: 16%;
+    padding-left: 10px;
+}
+
+.Moveis-container-category {
+    display: flex;
+    padding-left: 10%;
+}
+
+.all-category-text-mobilias {
+    padding-top: 8%;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#all-category-center-moveis-icone-id {
+    padding-top: 16%;
+    padding-left: 10px;
+}
+
+.Veiculos-container-category {
+    display: flex;
+    padding-left: 10%;
+}
+
+.all-category-text-automoveis {
+    padding-top: 8%;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#all-category-center-veiculos-icone-id {
+    padding-top: 16%;
+    padding-left: 10px;
+}
+
+.nav-button {
+    border: none;
+    display: flex; 
+    background-color: white; 
+    height: 40px; 
+    width: 120px;
+}
+
+.nav-button-ativo {
+    border-color: orange;
+    color: salmon;
+  }
+
+.carousel {
+    background-color: #f6bf67;
+}
+
+.slider {
+    position: relative;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+  
+  .slider::before,
+  .slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .slider::before {
+    left: 0;
+    background: linha-horizontalar-gradient(to right, #f6bf67, transparent); /* Desvanece da cor de fundo para transparente à direita */
+  }
+  
+  .slider::after {
+    right: 0;
+    background: ar-gradient(to left, #f6bf67, transparent); /* Desvanece da cor de fundo para transparente à esquerda */
+  }
+
+.slick-item {
+    padding-left: 100px;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: -7em;
+}
+.carousel-controls button {
+    cursor: pointer;
+}
+
+.oferta-container-all {
+    display: none;
+}
+
+.moda-container-all {
+    display: none;
+}
+
+.tecnologia-container-all {
+    display: none;
+}
+
+.moveis-container-all {
+    display: none;
+}
+
+.veiculos-container-all {
+    display: none;
+}
