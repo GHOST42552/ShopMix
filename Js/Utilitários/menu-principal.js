@@ -1,5 +1,5 @@
 function formatarCEP(input) {
-  let value = input.value.replace(/\D/g, ''); 
+  let value = input.value.replace(/\D/, ''); 
   value = value.slice(0, 8); 
 
   if (value.length > 5) {
