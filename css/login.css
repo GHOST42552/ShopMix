@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+}
+
+.login-container-configuracoes {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.login-form {
+    display: flex;
+    border: 1px solid #ccc;
+    background-color: #3a437a;
+    border-radius: 5px;
+    box-shadow: 5px 2px 5px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+.login-content-container {
+    user-select: none;
+    height: 360px;
+    box-shadow: -20px 0 30px 15px #3a437a;
+    padding: 20px;
+}
+
+.btn-fechar {
+    float: right;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+.input-email-login-configuracoes {
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: #333e84;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2px 0 2px 5px;
+    font-size: 11px;
+}
+
+.input-email-login-configuracoes::placeholder {
+    color: rgb(163, 143, 117);
+}
+
+.input-senha-login-configuracoes {
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: #333e84;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2px 0 2px 5px;
+    font-size: 11px;
+}
+
+.input-senha-login-configuracoes::placeholder {
+    color: rgb(163, 143, 117);
+}
+
+#form-login {
+    width: 300px;
+}

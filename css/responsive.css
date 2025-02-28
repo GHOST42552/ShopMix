@@ -1,0 +1,43 @@
+@media screen and (max-width: 768px) and (hover: none) {
+    /* Tela Pequena Sem Hover */
+    .all-menu {
+        height: 40px;
+    }
+
+    .ShopMix-nav-logo {
+        width: 150px;
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    .Barra-de-pesquisa {
+        width: 150px;
+        height: 25px;
+    }
+
+    .slider {
+      position: relative;
+      margin-left: 50px;
+      margin-right: 50px;
+      height: 120px;
+  }
+    .slick-item img {
+      height: 150px;
+  }
+  }
+
+  @media screen and (max-width: 768px) and (hover: hover) {
+    /* Tela Pequena Com Hover */
+  }
+
+@media screen and (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+    /* Tela Média Orientação Paisagem */
+  }
+
+@media screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Tela Grande Alta Resolução(retina) */
+  }
+
+@media print, screen and (min-width: 1200px) {
+    /* Impressão ou Tela Grande */
+  }

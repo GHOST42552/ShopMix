@@ -2,69 +2,85 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="keywords" content="loja, loja onlinha-horizontal, compras, entrega rápida, confiável">
+        <meta name="keywords" content="loja, loja online, compras, entrega rápida, confiável">
         <meta name="description" content="Um site de compras e vendas">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ShopMix</title>
-        <link rel="stylesheet" href="Css/style.css">
-        <link rel="stylesheet" href="Css/responsive.css">
-        <link rel="icon" href="Assets/Icons/ShopMix.png" type="">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="icon" href="Assets/icons/ShopMix.png" type="">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-        <script src="Js/Utilitários/menu-principal.js" defer></script>
-        <script src="Js/Utilitários/carrosel-imagens.js" defer></script>
-        <script src="Js/Componentes/Formatação-data.js" defer></script>
-        <script src="Js/Componentes/Validação-emails.js" defer></script>
-        <script src="Js/scripts.js" defer></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="media-queries.js"></script>
+        <script src="js/utilitários/menu-principal.js" defer></script>
+        <script src="js/utilitários/carrosel-imagens.js" defer></script>
+        <script src="js/componentes/formatação-data.js" defer></script>
+        <script src="js/componentes/validação-emails.js" defer></script>
+        <script src="js/scripts.js" defer></script>
     </head>
     <body>
         <header>
-            <section class="all-menu">
+        <section class="all-menu">
             <div class="ShopMix-nav-logo-container">
-                <a href="http://127.0.0.1:5500" class="ShopMix-nav-logo" data-i18n="shopMixName">Shop Mix: loja que vende de tudo</a>
+                <a href="http://127.0.0.1:5500" class="ShopMix-nav-logo" data-i18n="shopMixName"  tabindex="-1">Shop Mix: Compre sem sair de casa!</a>
             </div>
+            <div class="Barra-de-pesquisa-container">
             <input type="text" placeholder="Procurar por.." class="Barra-de-pesquisa" name="pesquisar" autocomplete="off" value="" data-i18n="barraPesquisaPlaceholder">
+            <div class="icone-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            </div>
             <div class="Right-part-menu">
+            <div id="notificacao-cep-carrinho-icones-right-part-menu">
             <div class="notificacao-container">
-                <i id="notificacao-icon-id" class="fa-solid fa-bell fa-xl" style="color: white;"></i>
+                <i id="notificacao-icon-id" class="fa-solid fa-bell fa-xl" data-target="notificacoes" tabindex="0"></i>
                 <div class="notification-container-quantity">
-                    <span class="notification-quantity" style="user-select: none;">0</span>
+                    <span class="notification-quantity">0</span>
                 </div>
             </div>
             <div class="CEP-container">
-                <i id="CEP-icon-id" class="fa-solid fa-location-dot fa-xl"></i>
+                <i id="CEP-icon-id" class="fa-solid fa-location-dot fa-xl" data-target="perfil" tabindex="0"></i>
             </div>
             <div class="Shopping-cart-container">
-                <a class="Shopping-cart-icon" href=""><i id="shopping-cart-icon-id" class="fa-solid fa-cart-shopping fa-xl"></i></a>
+                <a class="Shopping-cart-icon">
+                    <i id="shopping-cart-icon-id" class="fa-solid fa-cart-shopping fa-xl" data-target="carrinho" tabindex="0"></i>
+                </a>
                 <div class="Shopping-cart-quantity-container">
-                    <span class="Shopping-cart-quantity" style="user-select: none;">0</span>
+                    <span class="Shopping-cart-quantity">0</span>
                 </div>
             </div>
-            <div class="all-container-menu-user">
+            </div>
+            <div class="all-container-menu-user" id="all-container-menu-user-id">
             <div class="Login-container">
-                <button id="button-user-icon" style="border: none; background-color: #ffde59;"><i id="login-user-icon-id" class="fa-solid fa-circle-user fa-2xl"></i></button>
+                <button id="button-user-icon">
+                    <i id="login-user-icon-id" class="fa-solid fa-circle-user fa-2xl"></i>
+                </button>
             </div>
             <div id="dropdown-menu-all-id" class="dropdown-menu-all">
-                <h3 style="color: #ccc; font-family: sans-serif; margin-top: 10px;" data-i18n="configuracoes">Configurações:</h3>
+                <h3 class="dropdown-menu-h3-text-configuracoes" data-i18n="configuracoes">Configurações:</h3>
                 <ul class="dropdown-menu-ul">
-                    <li data-i18n="loginRegistre">Login/Registre-se</li>
-                    <li data-i18n="perfil">Perfil</li>
-                    <li data-i18n="notificacoes">Notificações</li>
-                    <li data-i18n="idiomaRegiao">Idioma e Região</li>
-                    <li data-i18n="acessibilidade">Acessibilidade</li>
-                    <li data-i18n="seguranca">Segurança</li>
-                    <li data-i18n="avancado">Avançado</li>
+                    <a><li data-i18n="loginRegistreSe" tabindex="0">Login/Registre-se</li></a>
+                    <a class="dropdown-menu-ul-a-configuracoes" data-config="perfil" tabindex="0"><li data-i18n="perfil">Perfil</li></a>
+                    <a class="dropdown-menu-ul-a-configuracoes" data-config="carrinho" tabindex="0"><li data-i18n="carrinho">Carrinho</li></a>
+                    <a class="dropdown-menu-ul-a-configuracoes" data-config="notificacoes" tabindex="0"><li data-i18n="notificacoes">Notificações</li></a>
+                    <a class="dropdown-menu-ul-a-configuracoes" data-config="idioma" tabindex="0"><li data-i18n="idioma">Idioma e Região</li></a>
+                    <a class="dropdown-menu-ul-a-configuracoes" data-config="privacidade" tabindex="0"><li data-i18n="privacidade">Privacidade</li></a>
+                    <a class="dropdown-menu-ul-a-configuracoes" data-config="acessibilidade" tabindex="0"><li data-i18n="acessibilidade">Acessibilidade</li></a>
+                    <a class="dropdown-menu-ul-a-configuracoes" data-config="seguranca" tabindex="0"><li data-i18n="seguranca">Segurança</li></a>
+                    <a class="dropdown-menu-ul-a-configuracoes" data-config="avancado" tabindex="0"><li data-i18n="avancado">Avançado</li></a>
                 </ul>
             </div>
             </div>
         </div>
         </section>
         <div class="all-container-category">
-            <div class="all-container-all-category">
+            <div class="all-container-all-category" id="all-container-all-category-id" tabindex="0">
                 <div class="all-category-chevron-all-container">
                     <div style="user-select: none;" data-i18n="todasCategorias">
-                    <strong>Todas as categorias</strong>
+                    <p style="font-size: 17px; color: #1a0b00;">Todas as categorias</p>
                 </div>
                 <div class="Chevron-container-all-category">
                     <a class="dropdown-all-category" type="button" onclick="mudariconechevronallcategory()"><i id="Chevron-icon-all-category" class="fa-solid fa-chevron-down"></i></a>
@@ -83,160 +99,286 @@
         </div>
             <nav class="all-category-center-container">
             <li class="Oferta-container-category">
-            <button type="button" class="nav-button">
-            <i id="all-category-center-ofertas-icone-id" class="fa-solid fa-solid fa-magnifying-glass-dollar fa-xl" style="color: lightsalmon;"></i>
+                <button style="align-items: center; justify-content: center;" type="button" class="nav-button" data-categoria="ofertas">
+            <i class="fa-solid fa-solid fa-magnifying-glass-dollar fa-xl"></i>
             <div class="all-category-text-ofertas" data-i18n="ofertas">
-                <strong>Ofertas</strong>
+                <p style="font-size: 15px;">Ofertas</p>
             </div>
             </button>
             </li>
             <li class="Moda-container-category">
-            <button type="button" class="nav-button">
-            <i id="all-category-center-moda-icone-id" class="fa-solid fa-shirt fa-xl" style="color: lightsalmon;"></i>
+                <button style="align-items: center; justify-content: center;" type="button" class="nav-button" data-categoria="moda">
+            <i class="fa-solid fa-shirt fa-xl"></i>
             <div  class="all-category-text-moda" data-i18n="moda">
-                <strong>Moda</strong>
+                <p style="font-size: 15px;">Moda</p>
             </div>
             </button>
             </li>
             <li class="Tecnologia-container-category">
-            <button type="button" class="nav-button">
-            <i id="all-category-center-tecnologia-icone-id" class="fa-solid fa-microchip fa-xl" style="color: lightsalmon;"></i>
+                <button style="align-items: center; justify-content: center; width: 130px;" type="button" class="nav-button" data-categoria="tecnologia">
+            <i class="fa-solid fa-microchip fa-xl"></i>
             <div  class="all-category-text-eletronicos" data-i18n="tecnologia">
-                <strong>Tecnologia</strong>
+                <p style="font-size: 15px;">Tecnologia</p>
             </div>
             </button>
             </li>
             <li class="Moveis-container-category">
-            <button type="button" class="nav-button">
-            <i id="all-category-center-moveis-icone-id" class="fa-solid fa-couch fa-xl" style="color: lightsalmon;"></i>
+                <button style="align-items: center; justify-content: center;" type="button" class="nav-button" data-categoria="moveis">
+            <i class="fa-solid fa-couch fa-xl"></i>
             <div  class="all-category-text-mobilias" data-i18n="moveis">
-                <strong>Móveis</strong>
+                <p style="font-size: 15px;">Móveis</p>
             </div>
             </button>
             </li>
             <li class="Veiculos-container-category">
-                <button type="button" class="nav-button">
-            <i id="all-category-center-veiculos-icone-id" class="fa-solid fa-car fa-xl" style="color: lightsalmon;"></i>
+                <button style="align-items: center; justify-content: center;" type="button" class="nav-button" data-categoria="veiculos">
+            <i class="fa-solid fa-car fa-xl"></i>
             <div  class="all-category-text-automoveis" data-i18n="veiculos">
-                <strong>Veículos</strong>
+                <p style="font-size: 15px;">Veículos</p>
             </div>
             </button>
             </li>
             </nav>
     </div>
     </header>
-    <div style="display: none;" class="carousel">
-        <div class="slider">
-            <div class="slick-item"><img style="height: 200px;" src="Assets/Carousel/images.jpg">
+    <div id="conteudoPrincipal" class="conteudoPrincipal">
+        <div class="carousel" id="carousel">
+            <div class="slider">
+            <div class="slick-item">
+                <img data-lazy="assets/carousel/carousel-imagem-1.png" id="carousel-image">
             </div>
-            <div class="slick-item"><img style="height: 200px;" src="Assets/Carousel/WhatsApp-Image-2018-09-16-at-5.07.21-PM.jpeg">
+            <div class="slick-item">
+                <img data-lazy="Assets/carousel/carousel-imagem-2.png" id="carousel-image">
             </div>            
-            <div class="slick-item"><video style="height: 200px;" src="Assets/Carousel/Download.mp4" controls></video>
+            <div class="slick-item">
+                <img data-lazy="assets/carousel/carousel-imagem-3.png" id="carousel-image">
             </div>
-        </div>
+            </div>
     </div>
-    <section class="oferta-container-all" data-i18n="ofertas">
-        <h1>Ofertas</h1>
-    </section>
-    <section class="moda-container-all" data-i18n="moda">
-        <h1>Moda</h1>
-    </section>
-    <section class="tecnologia-container-all" data-i18n="tecnologia">
-        <h1>Tecnologia</h1>
-    </section>
-    <section class="moveis-container-all" data-i18n="moveis">
-        <h1>Móveis</h1>
-    </section>
-    <section class="veiculos-container-all" data-i18n="veiculos">
-        <h1>Veículos</h1>
-    </section>
-    <div class="configuracoes">
-        <div class="configuracoes-xmark-container">
-            <h3 style="text-align: left; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  padding-left: 100px;" data-i18n="configuracoes">Configurações</h3>
-            <button><i class="fa-solid fa-xmark fa-xl"></i></button>
+    <iframe src="html/login.html" id="login" style="position: fixed; display: flex; width: 100%; height: 100%; top: 0; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: 4; display: none;" frameborder="0"></iframe>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+         const currentURL = window.location.href;
+         if (currentURL.includes('index.html')) {
+           const iframe = document.getElementById('login');
+           const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+           const xmarkButton = iframeDocument.getElementById('botao-container-login-xmark');
+           if (xmarkButton) {
+             xmarkButton.style.display = 'block'
+         }
+     }
+     });
+     window.addEventListener('message', (event) => {
+        if (event.origin !== window.location.origin) {
+          return;
+        }
+      });
+     </script>
+    <section class="conteudo-categoria" id="conteudo-ofertas">
+        <h1 data-i18n="ofertas">Ofertas</h1>
+        <div class="all-container-item-ofertas" style="display: flex; flex-wrap: wrap; padding: 0 10% 0 10%; justify-content: center;">
+        <div class="item-container-ofertas">
+            <div style="display: flex; justify-content: center; width: 100%; height: 45%;">
+            <img src="Assets/Images/Banana_pratapng.png" style="max-width: 250px; height: auto; object-fit: contain;">
+            </div>
+            <div class="linha-horizontal" style="width: 90%; margin: auto;"></div>
+            <div class="info-produto">
+                <h3 class="nome-produto">Nome do produto</h3>
+                <p class="preco-produto">R$ 12,99kg</p>
+                <p class="descricao-produto">na nana da boa</p>
+                <div class="avaliacoes">
+                  <p>Avaliação: 4,5 estrelas</p>
+                  <p>Comentários: "Banana da boa, chegou meio preta, mas, recomendo!"</p>
+                </div>
+              </div>
         </div>
-        <div style="display: flex;">
-        <div class="all-container-line-abas">
-          <div class="linha-vertical" style="margin-left: 100px;"></div>
-          <div class="abas">
-          <button class="aba-botao ativo" data-aba="geral" data-i18n="perfil">Perfil</button>
-          <button class="aba-botao" data-aba="notificacoes" data-i18n="notificacoes">Notificações</button>
-          <button class="aba-botao" data-aba="idioma" data-i18n="idiomaRegiao">Idioma e Região</button>
-          <button class="aba-botao" data-aba="privacidade" data-i18n="privacidade">Privacidade</button>
-          <button class="aba-botao" data-aba="acessibilidade" data-i18n="acessibilidade">Acessibilidade</button>
-          <button class="aba-botao" data-aba="seguranca" data-i18n="seguranca">Segurança</button>
-          <button class="aba-botao" data-aba="avancado" data-i18n="avancado">Avançado</button>
+        <div class="item-container-ofertas">
+        </div>
+        <div class="item-container-ofertas">
+        </div>
+        <div class="item-container-ofertas">
+        </div>
+        </div>
+    </section>
+    <section class="conteudo-categoria" id="conteudo-moda">
+        <h1 data-i18n="moda">Moda</h1>
+    </section>
+    <section class="conteudo-categoria" id="conteudo-tecnologia">
+        <h1 data-i18n="tecnologia">Tecnologia</h1>
+    </section>
+    <section class="conteudo-categoria" id="conteudo-moveis">
+        <h1 data-i18n="moveis">Móveis</h1>
+    </section>
+    <section class="conteudo-categoria" id="conteudo-veiculos">
+        <h1 data-i18n="veiculos">Veículos</h1>
+    </section>
+    </div>
+    <iframe src="html/configuracoes.html" id="iframe-configuracoes" style="width: 100%; height: 455px; border: none; display: none;"></iframe>
+    <script>
+    const configuracoesIframe = document.getElementById('iframe-configuracoes');
+    let configuracoesDocument;
+    const configuracoesAbertas = localStorage.getItem('configuracoesAbertas');
+    if (configuracoesAbertas === 'true') {
+        configuracoesIframe.style.display = 'block';
+        conteudoPrincipal.style.display = 'none';
+    } else {
+        configuracoesIframe.style.display = 'none';
+        conteudoPrincipal.style.display = 'block';
+    }
+
+    configuracoesIframe.onload = () => {
+        configuracoesDocument = configuracoesIframe.contentDocument;
+        const abaAtivaSalva = localStorage.getItem('abaAtiva');
+        if (abaAtivaSalva && configuracoesDocument) {
+            ativarAba(abaAtivaSalva, configuracoesDocument);
+        } else {
+            ativarAba('perfil', configuracoesDocument);
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', async function () {
+        const linksDropdown = document.querySelectorAll('.dropdown-menu-ul a');
+
+        linksDropdown.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const configTarget = link.dataset.config;
+
+            if (configTarget && configuracoesDocument) {
+                ativarAba(configTarget, configuracoesDocument);
+                atualizarEstadoConfiguracoes(true);
+            }
+        });
+    });
+
+        const notificacaoIcon = document.getElementById('notificacao-icon-id');
+        const cepIcon = document.getElementById('CEP-icon-id');
+        const carrinhoIcon = document.getElementById('shopping-cart-icon-id');
+
+            notificacaoIcon?.addEventListener('click', () => {
+                ativarAba('notificacoes', configuracoesDocument);
+                atualizarEstadoConfiguracoes(true);
+            });
+
+            cepIcon?.addEventListener('click', () => {
+                ativarAba('perfil', configuracoesDocument);
+                atualizarEstadoConfiguracoes(true);
+            });
+
+            carrinhoIcon?.addEventListener('click', () => {
+                ativarAba('carrinho', configuracoesDocument);
+                atualizarEstadoConfiguracoes(true);
+            });
+    });
+
+    function atualizarEstadoConfiguracoes(abrir) {
+        const iframeConfiguracoes = document.getElementById('iframe-configuracoes');
+        const conteudoPrincipal = document.getElementById('conteudoPrincipal');
+
+    if (!iframeConfiguracoes || !conteudoPrincipal) {
+        return;
+    }
+
+    if (abrir) {
+        iframeConfiguracoes.style.display = 'block';
+        conteudoPrincipal.style.display = 'none';
+        localStorage.setItem('configuracoesAbertas', 'true');
+    } else {
+        iframeConfiguracoes.style.display = 'none';
+        conteudoPrincipal.style.display = 'block';
+        localStorage.setItem('configuracoesAbertas', 'false');
+    }
+    }
+
+    window.addEventListener('message', (event) => {
+        if (event.data === 'fecharConfiguracoes') {
+            atualizarEstadoConfiguracoes(false);
+        }
+    });
+
+    function ativarAba(abaId, doc) {
+        if (!doc) {
+            return;
+        }
+
+    const abas = doc.querySelectorAll('.aba-botao');
+    const conteudos = doc.querySelectorAll('.conteudo');
+
+
+    abas.forEach(aba => aba.classList.remove('ativo'));
+    conteudos.forEach(conteudo => conteudo.classList.remove('ativo'));
+
+    const abaAtiva = doc.querySelector(`.aba-botao[data-aba="${abaId}"]`);
+    const conteudoAtivo = doc.getElementById(abaId);
+
+if (abaAtiva && conteudoAtivo) {
+    abaAtiva.classList.add('ativo');
+    conteudoAtivo.classList.add('ativo');
+    localStorage.setItem('abaAtiva', abaId);
+    }
+}
+    const abaAtivaSalva = localStorage.getItem('abaAtiva');
+    if (abaAtivaSalva) {
+        ativarAba(abaAtivaSalva, document);
+    }
+
+    window.addEventListener('message', (event) => {
+    if (event.data === 'fecharConfiguracoes') {
+        atualizarEstadoConfiguracoes(false);
+        reInicializarCarrossel();
+    }
+});
+    </script>
+    <footer>
+        <div class="footer-all-container">
+          <div class="linha-horizontal" style="box-sizing: border-box;  border-color: #ff8c00;"></div>
+        <div class="yellow-bar">
+            <button style="display: flex; background: none; border: none; align-items: center;">
+            <p style="font-size: 14px; color: white;">Voltar</p>
+            <i class="fa-solid fa-chevron-up" style="margin: 10px; color: white;"></i>
+            </button>
+        </div>
+          <div class="footer-content">
+            <div class="footer-logo">
+              <img src="Assets/Icons/Shop_Mix-removebg-preview.png" alt="ShopMix Logo">
+              <p>Compre sem sair de casa. Conforto e praticidade a um clique!</p>
+            </div>
+            <div class="footer-sections">
+              <div class="footer-section" style="width: 300px;">
+                <h3 style="text-align: left;">Redes Sociais:</h3>
+                <p class="social-text">Conecte-se conosco nas redes sociais!</p>
+              <div class="social-icons">
+                  <a href="#"><i class="fa-brands fa-facebook fa-xl" style="color: #3a437a;"></i></a>
+                  <a href="#"><i class="fa-brands fa-x-twitter fa-xl" style="color: #3a437a;"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram fa-xl" style="color: #3a437a;"></i></a>
+              </div>
+              </div>
+            <div class="footer-section">
+                <h3>Categorias</h3>
+                <ul>
+                  <li class="itens-lista-footer"><a href="#">Eletrodomésticos</a></li>
+                  <li class="itens-lista-footer"><a href="#">Moda</a></li>
+                  <li class="itens-lista-footer"><a href="#">Casa e Móveis</a></li>
+                  <li class="itens-lista-footer"><a href="#">Veículos</a></li>
+                </ul>
+              </div>
+              <div class="footer-section">
+                <h3>Ajuda</h3>
+                <ul>
+                  <li class="itens-lista-footer"><a href="#">FAQ</a></li>
+                  <li class="itens-lista-footer"><a href="#">Suporte</a></li>
+                  <li class="itens-lista-footer"><a href="#">Entrega</a></li>
+                  <li class="itens-lista-footer"><a href="#">Pagamento</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="linha-horizontal" style="margin: auto; width: 80%; border-color: #ff8c00;"></div>
+            <p class="copyright">&copy; 2022 ShopMix. Todos os direitos reservados.</p>
           </div>
         </div>
-        <div class="conteudo-abas">
-            <div class="conteudo ativo" id="geral">Perfil</div>
-            <div class="conteudo" id="notificacoes">Conteúdo de Notificações</div>
-            <div class="conteudo" id="idioma">
-                <div class="all-container-location-region">
-                <div>
-                <h2>Idioma</h2>
-                <select id="select-idioma" style="margin: 10px 0 0 30px; width: 200px;">
-                    <option value="pt-BR">Português (Brasil)</option>
-                    <option value="en-US">English (United States)</option>
-                </select>
-                </div>
-                <div class="linha-horizontal"></div>
-                <div>
-                <h2>Região</h2>
-                    <div class="location-region-content">
-                    <div class="pais-cep-container">
-                    <div>
-                    <label for="pais" class="text-container-localizacao" style="user-select: none;">País:</label>
-                    <div style="padding-right: 40px;">
-                    <select class="select-pais-option" style="margin: 10px 0 10px 0;" id="pais" name="pais">
-                        <option value="br" selected>Brasil</option>
-                    </select>
-                    </div>
-                    </div>
-                    <div>
-                    <label for="CEP" class="text-container-localizacao" style="user-select: none; padding-right: 5px;">CEP:</label>
-                       <div class="input-cep-error-message-container">
-                        <input type="text" id="CEP" name="CEP" maxlength="9" style="width: 100px; margin: 10px 0 10px 0; padding-left: 50px;" placeholder="00000-000" ... data-alerta-exibido="false" oninput="formatarCEP(this)" onblur="buscarCEP(this)">
-                        <div id="cep-error" class="error-message" data-i18n="cep.invalido!">Cep Inválido!</div>
-                        <div id="cep-invalido-error" class="error-message" style="margin-right: 10px;" data-i18n="cep.invalido.digite.8.digitos">CEP inválido. Digite 8 dígitos.</div>
-                        <div id="cep-nao-encontrado-error" class="error-message" data-i18n="cep.nao.encontrado">CEP não encontrado.</div>
-                        <div id="cep-erro-requisicao" class="error-message" data-i18n="erro.consultar.cep">Erro ao consultar o CEP.</div>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="estado-cidade-container">
-                    <label for="estado" class="text-container-localizacao" id="label-estado" style="user-select: none; pointer-events: none;">Estado:</label>
-                        <input class="estado-input-text" type="text" style="margin: 10px 0 10px 0; padding-left: 5px; width: 25px; pointer-events: none;" id="estado" name="estado" value="">
-                    <label for="cidade" class="text-container-localizacao" style="user-select: none; pointer-events: none;">Cidade:</label>
-                        <input class="cidade-input-text" type="text" style="width: 100px; margin: 10px 10px 10px 0; padding-left: 5px;" id="cidade" name="cidade">
-                    </div>
-                    <div>
-                    <label for="logradouro" class="text-container-localizacao" style="user-select: none;">Logradouro:</label>
-                        <input type="text" style="width: 100px; margin: 10px 0 10px 0; padding-left: 5px;" id="logradouro" name="logradouro">
-                    </div>
-                    <div>
-                    <label for="bairro" class="text-container-localizacao" style="user-select: none;">Bairro:</label>
-                        <input type="text" style="width: 100px; margin: 10px 0 10px 0; padding-left: 5px;" id="bairro" name="bairro">
-                    </div>
-                    <div>
-                    <label for="Numero da casa" class="text-container-localizacao" style="user-select: none;">Número da casa:</label>
-                        <input type="text" style="width: 100px; margin: 10px 0 10px 0; padding-left: 5px;" id="numero da casa" name="numero da casa" maxlength="5">
-                    </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            <div class="conteudo" id="privacidade">Conteúdo de Privacidade</div>
-            <div class="conteudo" id="acessibilidade">Conteúdo de Acessibilidade</div>
-            <div class="conteudo" id="seguranca">Conteúdo de Segurança</div>
-            <div class="conteudo" id="avancado">Conteúdo Avançado</div>
-        </div>
-      </div>
-    </div>
-    <footer>
-    </footer>
-        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      </footer>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     </body>
 </html>

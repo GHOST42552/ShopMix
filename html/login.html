@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="../js/scripts.js" defer></script>
+</head>
+<body>
+<div class="login-container-configuracoes" id="login-container-id">
+    <div class="login-form">
+        <img src="../assets/Images/Welcome To.png" style="height: 405px; width: auto;">
+        <div class="login-content-container"> 
+            <button id="botao-container-login-xmark" onclick="ocultarLogin()" style="float: right; display: none; background: none; border: none;">
+                <i class="fas fa-xmark fa-xl" style="color: #151b45;"></i>
+            </button>
+            <h1 style="margin: 15px; color: burlywood; text-align: center; font-family: 'Times New Roman', Times, serif;">Login</h1>
+        <form id="form-login" action="#" method="post">
+            <i class="fa-solid fa-envelope" style="padding: 0 2px 0 5px; color: #151b45;"></i>
+            <label for="email" style="color: orange; font-size: 15px">Email:</label><br>
+            <input type="email" class="input-email-login-configuracoes" id="email" name="email" placeholder="Example@gmail.com" autocomplete="off" required><br><br>
+            <i class="fa-solid fa-key" style="padding: 0 2px 0 5px; color: #151b45;"></i>
+            <label for="password" style="color: orange;">Senha:</label><br>
+            <input type="password" class="input-senha-login-configuracoes" id="password" name="password" placeholder="Senha" autocomplete="off" required><br><br>
+            <div style="display: flex; justify-content: space-between;">
+            <div>
+            <input type="checkbox" id="lembrar" name="lembrar">
+            <label for="lembrar" style="user-select: none; color: orange; font-size: 14px;">Lembre-me</label><br><br>
+            </div>
+            <div>
+            <a href="#" style="color: cornflowerblue; font-size: 14px;">Esqueceu a senha?</a>
+            </div>
+            </div>
+            <button type="submit" style="width: 100%; font-size: 16px; background-color: orange; color: white; padding: 5px; border-color: burlywood;">Entrar</button>
+            <div style="text-align: center; padding-top: 20px;">
+            <p style="font-size: 16px; text-align: center; padding-bottom: 10px; color: burlywood;">Logar com</p>
+            <button id="google-login" style="background: none; border: none;"><img src="../Assets/Icons/google.png" style="width: 30px;"></button>
+            <button id="facebook-login" style="background: none; border: none; padding: 0 15px 0 15px;"><img src="../Assets/Icons/facebook.png" style="width: 30px;"></button>
+            <button id="apple-login" style="background: none; border: none;"><img src="../Assets/Icons/apple-logo.png" style="width: 30px;"></button>
+            </div>        
+        </form>
+    </div>
+    </div>
+</div>
+</body>
+</html>

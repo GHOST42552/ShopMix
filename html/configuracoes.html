@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Configurações</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/configuracoes.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="../js/utilitários/carrosel-imagens.js"></script>
+        <script src="../js/scripts.js" defer></script>
+        <script src="../config/configuracoes.js" defer></script>
+    </head>
+    <body>
+<div class="configuracoes" id="configuracoes-id">
+    <div class="configuracoes-xmark-container">
+        <h3 class="configuracoes-xmark-container-h3-text" data-i18n="configuracoes">Configurações</h3>
+        <button id="configuracoes-xmark-button" style="border: none; background: none;"><i class="fa-solid fa-xmark fa-xl"></i></button>
+        <script>
+            document.getElementById('configuracoes-xmark-button').addEventListener('click', () => {
+                window.parent.postMessage('fecharConfiguracoes', '*');
+        });
+        </script>
+    </div>
+    <div style="display: flex;">
+    <div style="width: 200px; height: 410px; display: flex; justify-content: center; align-items: center; background-color: white;"></div>
+    <div class="all-container-line-abas">
+    <div class="linha-vertical" style="margin: 0 auto 0 auto;"></div>
+      <div class="abas">
+      <button class="aba-botao ativo" data-aba="perfil">
+        <i class="fa-solid fa-user fa-xl"></i>
+        <p data-i18n="perfil">Perfil</p>
+      </button>
+      <button class="aba-botao" data-aba="carrinho">
+        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+        <p data-i18n="carrinho">Carrinho</p>
+      </button>
+      <button class="aba-botao" data-aba="notificacoes">
+        <i class="fa-solid fa-bell fa-xl"></i>
+        <p data-i18n="notificacoes">Notificações</p>
+      </button>
+      <button class="aba-botao" data-aba="idioma">
+        <i class="fa-solid fa-language fa-xl"></i>
+        <p data-i18n="idioma">Idioma e Região</p>
+      </button>
+      <button class="aba-botao" data-aba="privacidade">
+        <i class="fa-solid fa-lock fa-xl"></i>
+        <p data-i18n="privacidade">Privacidade</p>
+      </button>
+      <button class="aba-botao" data-aba="acessibilidade">
+        <i class="fa-solid fa-hands fa-xl"></i>
+        <p data-i18n="acessibilidade">Acessibilidade</p>
+      </button>
+      <button class="aba-botao" data-aba="seguranca">
+        <i class="fa-solid fa-shield-halved fa-xl"></i>
+        <p data-i18n="seguranca">Segurança</p>
+      </button>
+      <button class="aba-botao" data-aba="avancado">
+        <i class="fa-solid fa-terminal fa-xl"></i>
+        <p data-i18n="avancado">Avançado</p>
+      </button>
+      </div>
+      <div class="linha-vertical" style="margin: 0 auto 0 auto;"></div>
+    </div>
+    <div class="conteudo-abas">
+        <div class="conteudo ativo" id="perfil" style="background-color: #222014f6;">
+            <iframe src="login.html" id="configuracoes-login" style="display: flex; width: 100%; height: 410px; box-sizing: border-box; border: none;"></iframe>
+            <div style="display: none;" id="conteudo-perfil-id">
+            <fieldset>
+                <div id="logged-in-message" style="display: none;">
+                    <p><span id="user-display-name"></span></p>
+                    <button id="logout-button">Sair</button></div>
+                <legend>Informações Pessoais</legend>
+                <label for="fullname">Nome Completo:</label><br>
+                <input type="text" id="fullname" name="fullname"><br><br>
+                <label for="profile-picture">Foto de Perfil:</label><br>
+                <input type="file" id="profile-picture" name="profile-picture" accept="image/*"><br><br>
+                <label for="birthdate">Data de Nascimento:</label><br>
+                <input type="date" id="birthdate" name="birthdate"><br><br>
+                <label for="gender">Gênero:</label><br>
+                <select id="gender" name="gender">
+                    <option value="">Selecione</option>
+                    <option value="male">Masculino</option>
+                    <option value="female">Feminino</option>
+                    <option value="other">Outro</option>
+                    <option value="prefer_not_to_say">Prefiro não dizer</option>
+                </select><br><br>
+                <label for="location">Localização:</label><br>
+                <input type="text" id="location" name="location"><br><br>
+                <label for="bio">Biografia/Sobre mim:</label><br>
+                <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Informações de Contato</legend>
+                <label for="phone">Número de Telefone:</label><br>
+                <input type="tel" id="phone" name="phone" autocomplete="off"><br><br>
+    
+                <label for="social-media">Redes Sociais:</label><br>
+                <input type="url" id="social-media" name="social-media"><br><br>
+            </fieldset>
+            <fieldset>
+                <label for="notifications">Notificações:</label><br>
+                <input type="checkbox" id="notifications" name="notifications"> Ativar notificações<br><br>
+    
+                <label for="privacy">Privacidade:</label><br>
+                <select id="privacy" name="privacy">
+                    <option value="public">Público</option>
+                    <option value="friends">Amigos</option>
+                    <option value="private">Privado</option>
+                </select><br><br>
+            </fieldset>
+            <div class="pais-cep-container">
+                <h2>Endereço</h2>
+                <div>
+                <label for="pais" class="text-container-localizacao" style="user-select: none;" data-i18n="pais">País:</label>
+                <div style="padding-right: 40px;">
+                <select class="select-pais-option" style="margin: 10px 0 10px 0;" id="pais" name="pais">
+                    <option value="br" data-i18n="brasil" selected>Brasil</option>
+                </select>
+                </div>
+                </div>
+                <div>
+                <label for="CEP" class="text-container-localizacao" style="user-select: none; padding-right: 5px;" data-i18n="cep:">CEP:</label>
+                <div class="input-cep-error-message-container">
+                    <input type="text" id="CEP" name="CEP" maxlength="9" style="width: 100px; margin: 10px 0 10px 0; padding-left: 5px;" placeholder="00000-000" ... data-alerta-exibido="false" oninput="formatarCEP(this)" onblur="buscarCEP(this)">
+                    <div id="cep-error" class="error-message" data-i18n="cep.invalido!">Cep Inválido!</div>
+                    <div id="cep-invalido-error" class="error-message" style="margin-right: 10px;" data-i18n="cep.invalido.digite.8.digitos">CEP inválido. Digite 8 dígitos.</div>
+                    <div id="cep-nao-encontrado-error" class="error-message" data-i18n="cep.nao.encontrado">CEP não encontrado.</div>
+                    <div id="cep-erro-requisicao" class="error-message" data-i18n="erro.consultar.cep">Erro ao consultar o CEP.</div>
+                </div>
+                </div>
+                </div>
+                <div class="estado-cidade-container">
+                <label for="estado" class="text-container-localizacao" id="label-estado" style="user-select: none; pointer-events: none;" data-i18n="estado">Estado:</label>
+                    <input class="estado-input-text" type="text" style="margin: 10px 0 10px 0; padding-left: 5px; width: 25px; pointer-events: none;" id="estado" name="estado" value="">
+                <label for="cidade" class="text-container-localizacao" style="user-select: none; pointer-events: none;" data-i18n="cidade">Cidade:</label>
+                    <input class="cidade-input-text" type="text" style="width: 100px; margin: 10px 10px 10px 0; padding-left: 5px;" id="cidade" name="cidade">
+                </div>
+                <div>
+                <label for="logradouro" class="text-container-localizacao" style="user-select: none;" data-i18n="logradouro">Logradouro:</label>
+                    <input type="text" style="width: 100px; margin: 10px 0 10px 0; padding-left: 5px;" id="logradouro" name="logradouro">
+                </div>
+                <div>
+                <label for="bairro" class="text-container-localizacao" style="user-select: none;" data-i18n="bairro">Bairro:</label>
+                    <input type="text" style="width: 100px; margin: 10px 0 10px 0; padding-left: 5px;" id="bairro" name="bairro">
+                </div>
+                <div>
+                <label for="Numero da casa" class="text-container-localizacao" style="user-select: none;" data-i18n="numeroCasa">Número da casa:</label>
+                    <input type="text" style="width: 100px; margin: 10px 0 10px 0; padding-left: 5px;" id="Numero da casa" name="Numero da casa" maxlength="5">
+                </div>
+                </div>
+                </div>
+                <div class="conteudo" id="carrinho">
+                    <h1 style="padding: 20px; text-align: center; width: 100%;">SEU CARRINHO</h1>
+                    <div id="mensagem-carrinho" class="mensagem-carrinho">
+                        <div class="mensagem-carrinho-container">
+                            <p class="mensagem-carrinho-content">Ei! Parece que você ainda não fez login. Sem problemas, é rapidinho! Depois, pode encher o carrinho à vontade.</p>
+                            <div class="mensagem-carrinho-button-container">
+                            <button class="mensagem-carrinho-button">Fazer Login</button>
+                            </div>
+                    </div>
+                    <div style="display: none;">
+                    </div>
+                </div>
+                </div>
+        <div class="conteudo" id="notificacoes">
+            <div id="mensagem-notificacoes" class="mensagem-notificacoes">
+                <div class="mensagem-notificacoes-container">
+                    <p class="mensagem-notificacoes-content">Você precisa fazer login para acessar este conteúdo.</p>
+                    <div class="mensagem-notificacoes-button-container">
+                    <button class="mensagem-notificacoes-button">Fazer Login</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class="conteudo" id="idioma">
+            <div id="mensagem-notificacoes" class="mensagem-notificacoes">
+                <div class="mensagem-notificacoes-container">
+                    <p class="mensagem-notificacoes-content">Você precisa fazer login para acessar este conteúdo.</p>
+                    <div class="mensagem-notificacoes-button-container">
+                    <button class="mensagem-notificacoes-button">Fazer Login</button>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none;">
+            <label for="select-idioma" data-i18n="idioma">Idioma:</label>
+            <div>
+            <select id="select-idioma" style="margin: 10px 0 0 30px; width: 200px;">
+                <option value="pt-BR" data-i18n="portugues(brasil)">Português (Brasil)</option>
+                <option value="en-US" data-i18n="english(united.states)">English (United States)</option>
+            </select>
+            </div>
+            <div class="formato-de-data-container">
+            <label for="select-data">Formato de Data:</label>
+            <div>
+            <select id="select-data" style="margin: 10px 0 0 30px; width: 200px;">
+                <option value="DD/MM/AAAA">DD/MM/AAAA</option>
+                <option value="MM/DD/AAAA">MM/DD/AAAA</option>
+                <option value="AAAA-MM-DD">AAAA-MM-DD</option>
+            </select>
+            </div>
+            <div id="data"></div>
+            </div>
+            <div class="formato-de-hora-container">
+            <label for="select-hora">Formato de Hora:</label>
+            <div>
+            <select id="select-hora" style="margin: 10px 0 0 30px; width: 200px;">
+                <option value="24">24 horas</option>
+                <option value="12">12 horas (AM/PM)</option>
+            </select>
+            </div>
+            <div id="hora"></div>
+            </div>
+            <div class="tipo-de-moeda-container">
+            <label for="select-moeda">Moeda:</label>
+            <div>
+            <select id="select-moeda" style="margin: 10px 0 0 30px; width: 200px;">
+                <option value="BRL">Real (BRL)</option>
+                <option value="USD">Dólar (USD)</option>
+                <option value="EUR">Euro (EUR)</option>
+            </select>
+            </div>
+            <div id="moeda"></div>
+            </div>
+            <div class="unidades-de-medida-container">
+            <label for="select-unidades">Unidades de Medida:</label>
+            <div>
+            <select id="select-unidades" style="margin: 10px 0 0 30px; width: 200px;">
+                <option value="metricas">Métricas (metros, quilômetros, etc.)</option>
+                <option value="imperial">Imperiais (pés, milhas, etc.)</option>
+            </select>
+            </div>
+            </div>
+            </div>
+            </div>
+        <div class="conteudo" id="privacidade">Conteúdo de Privacidade</div>
+        <div class="conteudo" id="acessibilidade">Conteúdo de Acessibilidade</div>
+        <div class="conteudo" id="seguranca">Conteúdo de Segurança</div>
+        <div class="conteudo" id="avancado">Conteúdo Avançado</div>
+    </div>
+    <div style="width: 200px; height: 410px; display: flex; align-items: center; background-color: white;">
+        <p style="writing-mode: vertical-lr; font-size: 50px; padding-left: 20px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(108, 108, 108); opacity: 50%;">ShopMix</p>
+    </div>
+    </div>
+</div>
+</body>
+</html>
